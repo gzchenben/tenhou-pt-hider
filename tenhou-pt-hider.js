@@ -1,34 +1,3 @@
-### 基于 TemperMonkey 的网页版天凤 pt 隐藏插件
-
-此插件是为了作者和其他的一些心态受到 pt 影响的雀士准备的。本插件的作用是将当前 pt 替换为 `xxxx`
-
-最终效果是这样：
-
-![QQ_1752022662206](./README.assets/QQ_1752022662206.png)
-
-![QQ_1752022314001](./README.assets/QQ_1752022314001.png)
-
-### 部署说明
-
-#### 第一步 添加 TemperMonkey 插件
-
-前往 TemperMonkey 官网 （ https://www.tampermonkey.net/ ）并找到自己的浏览器类型下载 TemperMonkey 插件：
-
-![QQ_1752022590917](./README.assets/QQ_1752022590917.png)
-
-![QQ_1752022711577](./README.assets/QQ_1752022711577.png)
-
-![QQ_1752022838425](./README.assets/QQ_1752022838425.png)
-
-#### 第二步 添加脚本
-
-在浏览器右上角查看当前插件，找到篡改猴并选择添加新脚本。
-
-![QQ_1752022968749](./README.assets/QQ_1752022968749.png)![QQ_1752022993070](./README.assets/QQ_1752022993070.png)
-
-接下来将以下脚本复制进编辑框，之后按下 CTRL + S 保存脚本。
-
-```javascript
 // ==UserScript==
 // @name         天凤PT点数隐藏
 // @namespace    http://tampermonkey.net/
@@ -40,7 +9,7 @@
 // @grant        none
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
 
     // 定义PT点数的选择器
@@ -67,7 +36,7 @@
     hidePt();
 
     // 使用MutationObserver监听DOM变化，以防PT点数动态加载
-    const observer = new MutationObserver(function(mutations) {
+    const observer = new MutationObserver(function (mutations) {
         hidePt();
     });
 
@@ -80,16 +49,3 @@
     // 可选：每隔一段时间检查一次，确保PT点数被隐藏
     setInterval(hidePt, 1000);
 })();
-```
-
-#### 第三部 设置开发者模式
-
-点击篡改猴插件右边的 "..." ，点击管理扩展，然后开启开发人员模式。
-
-![QQ_1752023414987](./README.assets/QQ_1752023414987.png)
-
-![QQ_1752023495063](./README.assets/QQ_1752023495063.png)
-
-#### 部署完成
-
-部署完成，接下来打开 tenhou.net/4/ 查看效果吧～
