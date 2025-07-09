@@ -1,0 +1,1 @@
+# tenhou-pt-hider
